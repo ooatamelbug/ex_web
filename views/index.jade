@@ -1,0 +1,43 @@
+extends layout
+
+block content
+    .container
+        #carouselExampleIndicators.carousel.slide(data-ride='carousel')
+            ol.carousel-indicators
+                li.active(data-target='#carouselExampleIndicators', data-slide-to='0')
+                li(data-target='#carouselExampleIndicators', data-slide-to='1')
+                li(data-target='#carouselExampleIndicators', data-slide-to='2')
+            .carousel-inner
+                .carousel-item.active
+                    img.d-block.w-100(src='/images/1.jpg', alt='First slide')
+                .carousel-item
+                    img.d-block.w-100(src='/images/2.jpg', alt='Second slide')
+                .carousel-item
+                    img.d-block.w-100(src='/images/3.jpg', alt='Third slide')
+            a.carousel-control-prev(href='#carouselExampleIndicators', role='button', data-slide='prev')
+                span.carousel-control-prev-icon(aria-hidden='true')
+                span.sr-only Previous
+            a.carousel-control-next(href='#carouselExampleIndicators', role='button', data-slide='next')
+                span.carousel-control-next-icon(aria-hidden='true')
+                span.sr-only Next
+        .properties
+            .col-md-12
+                .row
+                    .col-md-3.text-center
+                        i.fas.fa-users
+                        h3 Users
+                        p you can make profile
+                    .col-md-3.text-center
+                        i.fas.fa-map-marker-alt
+                        h3 know rout
+                        p you can make direction
+                    .col-md-3.text-center
+                        i.fas.fa-bus
+                        h3 know new places
+                        p you can go to places
+                    .col-md-3.text-center
+                        i.fas.fa-newspaper
+                        h3 know news
+                        p you can know news
+        h1= title
+        p Welcome to #{title} page

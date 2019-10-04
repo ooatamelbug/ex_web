@@ -1,0 +1,52 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/fontawesome-all.min.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    .container
+        nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+            a.navbar-brand(href="#") SohageWeb
+            button.navbar-toggler(type="button",data-toggle="collapse",data-target="#navbarSupportedContent",aria-controls="navbarSupportedContent",aria-expanded="false",aria-label="Toggle navigation")
+                span.navbar-toggler-icon
+            #navbarSupportedContent.collapse.navbar-collapse
+                ul.navbar-nav.mr-auto
+                    li.nav-item.active
+                        a.nav-link(href='/') Home 
+                            span.sr-only (current)
+                    li.nav-item
+                        a.nav-link(href='/news') News
+                    li.nav-item.dropdown
+                        a#navbarDropdown.nav-link.dropdown-toggle(href='#', role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false') Department
+                        .dropdown-menu(aria-labelledby='navbarDropdown')
+                            a.dropdown-item(href='/deparment/transport') transport
+                            a.dropdown-item(href='/deparment/archect') Archect
+                    if user    
+                        li.nav-item.dropdown
+                            a#navbarDropdown.nav-link.dropdown-toggle(href='#', role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')= user.username
+                            .dropdown-menu(aria-labelledby='navbarDropdown')
+                                a.dropdown-item(href='/profile') profile
+                                if user.userGroup > 0
+                                    a.dropdown-item(href='/edit/new') News Edit
+                                    a.dropdown-item(href='/edit/users') User Edit
+                                    a.dropdown-item(href='/edit/site') Site Edit
+                                a.dropdown-item(href='/logout') logout
+                    if !user 
+                        li.nav-item.dropdown
+                            a#navbarDropdown.nav-link.dropdown-toggle(href='#', role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false') login and regester
+                            .dropdown-menu(aria-labelledby='navbarDropdown')
+                                a.dropdown-item(href='/user/regester') regester
+                                a.dropdown-item(href='/user/login') login
+                form.form-inline.my-2.my-lg-0(action='#',method='post')
+                    input.form-control.mr-sm-2(type='search', placeholder='Search', aria-label='Search')
+                    button.btn.btn-outline-success.my-2.my-sm-0(type='submit') Search
+    .container                
+        !=messages()
+    block content
+    script(src='/javascripts/jquery-3.3.1.min.js')
+    script(src='/javascripts/bootstrap.min.js')
+    script(src='/javascripts/front.js')
+
+

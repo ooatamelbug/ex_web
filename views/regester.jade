@@ -1,0 +1,25 @@
+extends layout
+
+
+block content
+    .container
+        .layout
+            h1= title
+            form(action='/user/regester',method='post',enctype='multipart/form-data')
+                if errors 
+                    each error, i in errors
+                        li.alert.alert-danger #{error.msg}
+                .form-group
+                    label(for='exampleuser') User Name
+                    input#exampleuser.form-control(type='text', placeholder='Enter user name',name='username')
+                .form-group
+                    label(for='examplepass') password
+                    input#examplepass.form-control(type='password', placeholder='password',name='password')
+                .form-group
+                    label(for='exampleemail') email
+                    input#exampleemail.form-control(type='email', placeholder='email',name='email')
+                .form-group
+                    label(for='exampleImage') profil image
+                    input#exampleImage.form-control(type='file',name='profimg')
+                button.btn.btn-primary(type='submit') Submit
+        

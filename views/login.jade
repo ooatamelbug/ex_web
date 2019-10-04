@@ -1,0 +1,15 @@
+extends layout
+
+
+block content
+    .container
+        .layout
+            h1= title
+            form(action='/user/login',method='post',enctype='multipart/form-data')
+                .form-group
+                    label(for='exampleuser') User Name
+                    input#exampleuser.form-control(type='text', placeholder='Enter user name',name='username')
+                .form-group
+                    label(for='examplepass') password
+                    input#examplepass.form-control(type='password', placeholder='password',name='password')
+                button.btn.btn-primary(type='submit') Submit

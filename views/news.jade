@@ -1,0 +1,8 @@
+extends layout
+
+block content
+    each new ,i in news
+        img(src='/images/uploads/#{new.img}')
+        h4= new.title
+        p= new.body
+        p= new.date

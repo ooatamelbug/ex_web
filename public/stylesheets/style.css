@@ -1,0 +1,21 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    background: #f3f0f0;
+}
+
+a {
+  color: #00B7FF;
+}
+.layout{
+    margin-top: 30px;
+}
+.d-block {
+    margin-bottom: 20px;
+}
+.properties {
+    margin: 20px 0px;
+}
+.properties i {
+    font-size: 95px;
+    color: #54eca7
+}
